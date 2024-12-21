@@ -1,23 +1,12 @@
 import Image from "next/image"
+import Link from "next/link"
 
-const AnimeList = () => {
+const AnimeList = ({title, images, id}) => {
   return (
-    <div>
-        <div className="grid grid-cols-3 gap-2 h-32">
-            <div className="bg-red-400">
-                <Image src="https://placehold.co/600x400.png" width={600} height={400} alt="No Image" />
-                <h3>JUDUL ANIME</h3>
-            </div>
-            <div className="bg-red-400">2</div>
-            <div className="bg-red-400">3</div>
-            <div className="bg-red-400">4</div>
-            <div className="bg-red-400">5</div>
-            <div className="bg-red-400">6</div>
-            <div className="bg-red-400">7</div>
-            <div className="bg-red-400">8</div>
-            <div className="bg-red-400">9</div>
-        </div>
-    </div>
+    <Link href={`/detail/${id}`} className="cursor-pointer">
+      <Image src={images} width={350} height={350} alt="..." />
+      <h3 className="font-bold md:text-xl text-md p-4">{title}</h3>
+    </Link>
   )
 }
 
